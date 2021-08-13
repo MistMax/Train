@@ -14,7 +14,6 @@ public class Server {
                 ServerSocket serverSocket = new ServerSocket(8188); // Создаём серверный сокет
                 System.out.println("Сервер запущен");
                 while (true) { // Бесконечный цикл для ожидания родключения клиентов
-                        try {
                             Socket socket = serverSocket.accept(); // Ожидаем подключения клиента
                             System.out.println("Клиент подключился");
                             DataInputStream in = new DataInputStream(socket.getInputStream()); // Поток ввода
@@ -34,8 +33,6 @@ public class Server {
                                 }
                             });
                             client.start();
-                        } catch (Exception e) {
-                        }
                     }
             } catch (IOException e) {
                 e.printStackTrace();
