@@ -9,7 +9,7 @@ public class Main {
         Person p5 = new Person("Анастасия","Иванова", 40, p1, p3);
         Person p6 = new Person("Сергей","Иванов", 40, p2, p4);
         Person p7 = new Person("Николай","Иванов", 20, p5, p6);
-        p1.info();
+        p7.info();
     }
 }
 
@@ -28,25 +28,25 @@ class Person{ // Описание того, как должен выглядит
     }
     void info(){
         String info = "Привет меня зовут "+this.name+" "+this.lastname+"\n" +
-                      "Мне "+this.age+" лет \n";
+                "Мне "+this.age+" лет \n";
 
         if(this.mother != null) {
             info += "Мою маму зовут " + this.mother.name + "\n";
-            if (this.mother.father != null) {
+            if (this.mother.father != null)
                 info += "Дедушку по маминой линии зовут " + this.mother.father.name + "\n";
-                if (this.mother.mother != null) {
-                    info += "Бабушку по маминой линии зовут " + this.mother.mother.name + "\n";
-                }
-            }
+            if (this.mother.mother != null)
+                info += "Бабушку по маминой линии зовут " + this.mother.mother.name + "\n";
+
+
         }
         if(this.father != null){
             info += "Моего папу зовут "+this.father.name+"\n";
-            if(this.father.father != null) {
+            if(this.father.father != null)
                 info += "Дедушку по папиной линии зовут "+this.father.father.name+"\n";
-                if(this.father.mother != null){
-                    info += "Бабушку по папиной линии зовут "+this.father.mother.name+"\n";
-                }
-            }
+            if(this.father.mother != null)
+                info += "Бабушку по папиной линии зовут "+this.father.mother.name+"\n";
+
+
         }
         System.out.println(info);
     }
